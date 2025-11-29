@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Super Fusion v2.2.4
+
+### Upgrade for [Patch v5.0.15](https://news.blizzard.com/en-us/article/24225313/starcraft-ii-5-0-15-patch-notes)
+
+#### Spire
+* Spire cost reduced from 200/200 to 150/150
+* Spire build time reduced from 71 seconds to 66 seconds
+
+#### Microbial Shroud
+* Microbial Shroud cost increased from 75 to 100
+* Microbial Shroud now requires an upgrade again (150/150)
+
+#### Viking
+* Viking cost reduced from 150/75 to 125/75
+
+#### Hyperflight Rotors
+* Hyperflight Rotors research time decreased to from 100 to 79 seconds
+
+#### Ghost
+* Ghost supply reduced from 3 to 2
+
 ## Super Fusion v2.2.3
 
 ### Upgrade for [Patch v5.0.14](https://news.blizzard.com/en-us/article/24162754/starcraft-ii-5-0-14-patch-notes)
