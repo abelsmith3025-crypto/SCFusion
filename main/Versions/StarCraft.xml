@@ -1624,7 +1624,7 @@
         </Unit>
         <Unit>
           <Name>Ghost</Name>
-          <SupplyCost>3</SupplyCost>
+          <SupplyCost>2</SupplyCost>
           <StartingEnergy>50</StartingEnergy>
           <MaxEnergy>200</MaxEnergy>
           <EnergyRechargeRate>0.7875</EnergyRechargeRate>
@@ -2615,7 +2615,7 @@
           <RequiresSourceBuildingStatusAbsent>Busy</RequiresSourceBuildingStatusAbsent>
           <AppliesSourceBuildingStatus duration="30">Busy</AppliesSourceBuildingStatus>
           <UnitComplete time="30" occupiesSourceBuilding="True">Viking</UnitComplete>
-          <MineralCost>100</MineralCost>
+          <MineralCost>125</MineralCost>
           <GasCost>75</GasCost>
         </Command>
         <Command category="BuildUnit">
@@ -2627,7 +2627,7 @@
           <AppliesSourceBuildingStatus duration="30">Busy</AppliesSourceBuildingStatus>
           <UnitComplete time="30" occupiesSourceBuilding="True">Viking</UnitComplete>
           <Queue>Primary</Queue>
-          <MineralCost>100</MineralCost>
+          <MineralCost>125</MineralCost>
           <GasCost>75</GasCost>
         </Command>
         <Command category="BuildUnit">
@@ -2639,7 +2639,7 @@
           <AppliesSourceBuildingStatus duration="30">Addon Busy</AppliesSourceBuildingStatus>
           <UnitComplete time="30" occupiesSourceBuilding="True">Viking</UnitComplete>
           <Queue>Secondary</Queue>
-          <MineralCost>100</MineralCost>
+          <MineralCost>125</MineralCost>
           <GasCost>75</GasCost>
         </Command>
         <Command category="BuildUnit">
@@ -2650,7 +2650,7 @@
           <AppliesSourceBuildingStatus duration="30">Busy</AppliesSourceBuildingStatus>
           <UnitComplete time="30" occupiesSourceBuilding="True">Viking</UnitComplete>
           <Queue>Primary</Queue>
-          <MineralCost>100</MineralCost>
+          <MineralCost>125</MineralCost>
           <GasCost>75</GasCost>
         </Command>
         <Command category="BuildUnit">
@@ -3093,8 +3093,8 @@
           <BuildingRequirement>Starport With Tech Lab</BuildingRequirement>
           <SourceBuilding>Starport With Tech Lab</SourceBuilding>
           <RequiresSourceBuildingStatusAbsent>Addon Busy</RequiresSourceBuildingStatusAbsent>
-          <AppliesSourceBuildingStatus duration="100">Addon Busy</AppliesSourceBuildingStatus>
-          <ResearchComplete time="100" occupiesSourceBuilding="True">Hyperflight Rotors</ResearchComplete>
+          <AppliesSourceBuildingStatus duration="79">Addon Busy</AppliesSourceBuildingStatus>
+          <ResearchComplete time="79" occupiesSourceBuilding="True">Hyperflight Rotors</ResearchComplete>
           <Queue>Secondary</Queue>
           <MineralCost>125</MineralCost>
           <GasCost>125</GasCost>
@@ -3745,6 +3745,9 @@
         <Research>
           <Name>Neural Parasite</Name>
         </Research>
+		<Research>
+          <Name>Microbial Shroud</Name>
+        </Research>
         <Research>
           <Name>Muscular Augments</Name>
         </Research>
@@ -3879,9 +3882,9 @@
           <BuildingRequirement>Lair</BuildingRequirement>
           <ConsumeWorker>True</ConsumeWorker>
           <WorkerTravelTime>5.0</WorkerTravelTime>
-          <BuildingComplete time="71">Spire</BuildingComplete>
-          <MineralCost>200</MineralCost>
-          <GasCost>200</GasCost>
+          <BuildingComplete time="66">Spire</BuildingComplete>
+          <MineralCost>150</MineralCost>
+          <GasCost>150</GasCost>
         </Command>
         <Command category="BuildBuilding">
           <Name>Build Infestation Pit</Name>
@@ -4433,6 +4436,16 @@
           <GasCost>150</GasCost>
         </Command>
         <Command category="Research">
+          <Name>Research Microbial Shroud</Name>
+          <BuildingRequirement>Infestation Pit</BuildingRequirement>
+          <SourceBuilding>Infestation Pit</SourceBuilding>
+          <RequiresSourceBuildingStatusAbsent>Busy</RequiresSourceBuildingStatusAbsent>
+          <AppliesSourceBuildingStatus duration="79">Busy</AppliesSourceBuildingStatus>
+          <ResearchComplete time="79" occupiesSourceBuilding="True">Microbial Shroud</ResearchComplete>
+          <MineralCost>150</MineralCost>
+          <GasCost>150</GasCost>
+        </Command>
+        <Command category="Research">
           <Name>Research Muscular Augments At Hydralisk Den</Name>
           <BuildingRequirement>Hydralisk Den</BuildingRequirement>
           <BuildingRequirement>Lair</BuildingRequirement>
@@ -4849,7 +4862,7 @@
         </Target>
         <Target category="UnitAbility">
           <Name>Microbial Shrouds Available</Name>
-          <SourceUnit energy="75">Infestor</SourceUnit>
+          <SourceUnit energy="100">Infestor</SourceUnit>
         </Target>
         <Target category="UnitAbility">
           <Name>Blinding Clouds Available</Name>
@@ -4931,6 +4944,10 @@
         <Target category="Research">
           <Name>Neural Parasite</Name>
           <Research>Neural Parasite</Research>
+        </Target>
+        <Target category="Research">
+          <Name>Microbial Shroud</Name>
+          <Research>Microbial Shroud</Research>
         </Target>
         <Target category="Research">
           <Name>Muscular Augments</Name>
