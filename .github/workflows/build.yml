@@ -6,12 +6,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Buscar binarios
-      shell: cmd
-      run: |
-        dir /s *.exe
-        dir /s bin
-        
     - name: Instalar NSIS
       run: choco install nsis --yes
       
@@ -23,10 +17,12 @@ jobs:
         echo InstallDir "$PROGRAMFILES\SCFusion" >> sc.nsi
         echo Section >> sc.nsi
         echo SetOutPath "$INSTDIR" >> sc.nsi
-        echo File /r "main\Release\*" >> sc.nsi
-        echo File /r "bin\*" >> sc.nsi
-        echo File /r "Installer\*" >> sc.nsi
-        echo CreateShortCut "$DESKTOP\SCFusion.lnk" "$INSTDIR\*.exe" >> sc.nsi
+        echo File "README.md" >> sc.nsi
+        echo File "Super Fusion.sln" >> sc.nsi
+        echo File /r "main" >> sc.nsi
+        echo File /r "Installer" >> sc.nsi
+        echo WriteRegStr HKLM "Software\SCFusion" "Path" "$INSTDIR" >> sc.nsi
+        echo CreateShortCut "$DESKTOP\SCFusion.lnk" "$INSTDIR\README.md" >> sc.nsi
         echo SectionEnd >> sc.nsi
         
     - name: Compilar
