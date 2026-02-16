@@ -21,14 +21,14 @@ jobs:
         echo File "Super Fusion.sln" >> sc.nsi
         echo File /r "main" >> sc.nsi
         echo File /r "Installer" >> sc.nsi
-        echo WriteRegStr HKLM "Software\SCFusion" "Path" "$INSTDIR" >> sc.nsi
         echo CreateShortCut "$DESKTOP\SCFusion.lnk" "$INSTDIR\README.md" >> sc.nsi
         echo SectionEnd >> sc.nsi
         
-    - name: Compilar
+    - name: Compilar NSIS (PATH fijo)
       shell: cmd
-      run: makensis sc.nsi
-      
+      run: |
+        "C:\Program Files (x86)\NSIS\makensis.exe" sc.nsi
+        
     - uses: actions/upload-artifact@v4
       with:
         name: SCFusion-Installer
