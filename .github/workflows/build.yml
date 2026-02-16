@@ -8,16 +8,18 @@ jobs:
     
     - name: List files
       run: dir
-    
-    - name: Find and build solutions
+      
+    - name: Build projects
+      shell: cmd
       run: |
         dir *.sln /s
-        for %%f in (*.sln) do msbuild "%%f" /p:Configuration=Release /p:Platform="Any CPU"
-    
+        for %%f in (*.sln) do msbuild "%%f" /p:Configuration=Release
+        
     - name: Instalar NSIS
       run: choco install nsis --yes
-    
+      
     - name: Crear NSIS
+      shell: cmd
       run: |
         echo Name "SCFusion" > sc.nsi
         echo OutFile "SCFusion.exe" >> sc.nsi
@@ -25,11 +27,11 @@ jobs:
         echo Section >> sc.nsi
         echo SetOutPath "$INSTDIR" >> sc.nsi
         echo File /r "bin\Release\*" >> sc.nsi
-        echo File /r "bin\x64\Release\*" >> sc.nsi
         echo CreateShortCut "$DESKTOP\SCFusion.lnk" "$INSTDIR\*.exe" >> sc.nsi
         echo SectionEnd >> sc.nsi
-    
+        
     - name: Compilar
+      shell: cmd
       run: makensis sc.nsi
       
     - uses: actions/upload-artifact@v4
